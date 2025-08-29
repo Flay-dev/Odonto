@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DentalCare - Clínica Odontológica</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./css/styles.css"/>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+  <!-- Header -->
+  <header class="header-glass fixed top-0 w-full z-50">
+    <nav class="container mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <a href="#inicio" class="flex items-center gap-2">
+          <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-xl grid place-items-center shadow-md">
+            <span class="text-white font-bold text-xl">🦷</span>
+          </div>
+          <span class="text-2xl font-bold">DentalCare</span>
+        </a>
+        <div class="hidden md:flex gap-8">
+          <a class="nav-link" href="#inicio">Início</a>
+          <a class="nav-link" href="#servicos">Serviços</a>
+          <a class="nav-link" href="#sobre">Sobre</a>
+          <a class="nav-link" href="#contato">Contato</a>
+        </div>
+        <button class="btn-solid shine" onclick="abrirAgendamento()">Agendar</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="inicio" class="gradient-bg pt-24 pb-10 relative">
+    <span class="hero-blob one"></span>
+    <span class="hero-blob two"></span>
+
+    <div class="container mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <span class="badge-gradient">Promo • Check-up + Limpeza</span>
+          <h1 class="mt-4 text-4xl md:text-5xl font-extrabold text-white leading-tight">
+            Sorriso saudável com <span class="text-[var(--accent)]">preço especial</span>
+          </h1>
+          <p class="mt-4 text-blue-100 text-lg max-w-xl">
+            Atendimento de excelência, tecnologia de ponta e humanizado.
+          </p>
+          <div class="mt-6 flex flex-col sm:flex-row gap-3">
+            <button class="btn-invert shine" onclick="abrirAgendamento()">Agendar agora</button>
+            <a class="btn-ghost" href="#servicos">Ver serviços</a>
+          </div>
+        </div>
+
+        <div class="glass p-6 md:p-8">
+          <div class="text-center">
+            <div class="text-6xl mb-3">😊</div>
+            <h3 class="text-2xl font-bold text-slate-800 mb-4">Fale com a clínica</h3>
+            <ul class="space-y-3 text-slate-600">
+              <li class="flex items-center gap-3"><span>📞</span><span>(11) 9999-9999</span></li>
+              <li class="flex items-center gap-3"><span>📍</span><span>Rua das Flores, 123</span></li>
+              <li class="flex items-center gap-3"><span>⏰</span><span>Seg–Sex: 8h às 18h</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divisor -->
+    <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
+      <path d="M0,32 C280,96 460,0 720,40 C980,80 1160,20 1440,48 L1440,120 L0,120 Z" fill="#ffffff"></path>
+    </svg>
+  </section>
+
+  <!-- CATEGORIAS / FILTROS -->
+  <section class="bg-white border-b border-slate-100">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex gap-3 overflow-x-auto no-scrollbar" id="categoriaBar">
+        <button class="chip active" data-cat="tudo">Todos</button>
+        <button class="chip" data-cat="clinica">Clínica Geral</button>
+        <button class="chip" data-cat="estetica">Estética</button>
+        <button class="chip" data-cat="ortodontia">Ortodontia</button>
+        <button class="chip" data-cat="implantes">Implantes</button>
+        <button class="chip" data-cat="pediatria">Odontopediatria</button>
+        <button class="chip" data-cat="emergencia">Emergência</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos" class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="flex items-end justify-between mb-8">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold">Nossos Serviços</h2>
+          <p class="text-slate-600">Tratamentos com qualidade e preço justo</p>
+        </div>
+        <a href="#contato" class="text-indigo-600 hover:text-indigo-700 font-semibold">Fale conosco →</a>
+      </div>
+
+      <div id="gridServicos" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="card-prod" data-cat="clinica">
+          <div class="card-top">
+            <span class="price-pill">R$ 80</span>
+            <span class="tag">Popular</span>
+          </div>
+          <div class="emoji">🦷</div>
+          <h3 class="card-title">Clínica Geral</h3>
+          <p class="card-desc">Consultas preventivas, limpeza e tratamentos básicos.</p>
+          <button class="btn-solid w-full" onclick="abrirAgendamento()">Agendar</button>
+        </article>
+
+        <article class="card-prod" data-cat="estetica">
+          <div class="card-top">
+            <span class="price-pill">R$ 200</span>
+            <span class="tag alt">Novo</span>
+          </div>
+          <div class="emoji">✨</div>
+          <h3 class="card-title">Estética Dental</h3>
+          <p class="card-desc">Clareamento, facetas e restaurações estéticas.</p>
+          <button class="btn-solid w-full" onclick="abrirAgendamento()">Agendar</button>
+        </article>
+
+        <article class="card-prod" data-cat="ortodontia">
+          <div class="card-top">
+            <span class="price-pill">R$ 150/mês</span>
+          </div>
+          <div class="emoji">🔧</div>
+          <h3 class="card-title">Ortodontia</h3>
+          <p class="card-desc">Aparelhos fixos e móveis para correção dentária.</p>
+          <button class="btn-solid w-full" onclick="abrirAgendamento()">Agendar</button>
+        </article>
+
+        <article class="card-prod" data-cat="implantes">
+          <div class="card-top">
+            <span class="price-pill">R$ 1.200</span>
+          </div>
+          <div class="emoji">🦴</div>
+          <h3 class="card-title">Implantes</h3>
+          <p class="card-desc">Reposição de dentes com implantes de titânio.</p>
+          <button class="btn-solid w-full" onclick="abrirAgendamento()">Agendar</button>
+        </article>
+
+        <article class="card-prod" data-cat="pediatria">
+          <div class="card-top">
+            <span class="price-pill">R$ 100</span>
+          </div>
+          <div class="emoji">👶</div>
+          <h3 class="card-title">Odontopediatria</h3>
+          <p class="card-desc">Cuidado especializado para crianças.</p>
+          <button class="btn-solid w-full" onclick="abrirAgendamento()">Agendar</button>
+        </article>
+
+        <article class="card-prod" data-cat="emergencia">
+          <div class="card-top">
+            <span class="price-pill">24h</span>
+          </div>
+          <div class="emoji">🚨</div>
+          <h3 class="card-title">Emergências</h3>
+          <p class="card-desc">Atendimento de urgência para dores e traumas.</p>
+          <button class="btn-solid w-full" onclick="abrirAgendamento()">Agendar</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="py-16 bg-slate-50">
+    <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Por que escolher a DentalCare?</h2>
+        <ul class="space-y-5 text-slate-700">
+          <li class="flex gap-3"><span class="i-dot">👨‍⚕️</span><span><b>Profissionais qualificados</b> com mais de 15 anos de experiência.</span></li>
+          <li class="flex gap-3"><span class="i-dot">🔬</span><span><b>Tecnologia avançada</b> para diagnósticos precisos.</span></li>
+          <li class="flex gap-3"><span class="i-dot">❤️</span><span><b>Atendimento humanizado</b> e ambiente acolhedor.</span></li>
+        </ul>
+      </div>
+      <div class="glass p-6 md:p-8">
+        <h3 class="text-2xl font-bold text-center mb-6">Nossos Números</h3>
+        <div class="grid grid-cols-2 gap-6 text-center">
+          <div><div class="stat">5000+</div><div class="muted">Pacientes</div></div>
+          <div><div class="stat">15+</div><div class="muted">Anos</div></div>
+          <div><div class="stat">98%</div><div class="muted">Satisfação</div></div>
+          <div><div class="stat">24h</div><div class="muted">Emergências</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl md:text-4xl font-bold">Entre em Contato</h2>
+        <p class="text-slate-600">Estamos prontos para cuidar do seu sorriso</p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-10">
+        <div class="space-y-6">
+          <div class="contact-row">
+            <div class="contact-ico">📍</div>
+            <div><h4 class="font-semibold">Endereço</h4><p class="muted">Rua das Flores, 123 - Centro, São Paulo/SP</p></div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-ico">📞</div>
+            <div><h4 class="font-semibold">Telefone</h4><p class="muted">(11) 9999-9999 • WhatsApp (11) 8888-8888</p></div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-ico">⏰</div>
+            <div><h4 class="font-semibold">Horário</h4><p class="muted">Seg–Sex: 8h às 18h • Sáb: 8h às 12h</p></div>
+          </div>
+          <div class="flex gap-3">
+            <a class="social" aria-label="Facebook" href="#"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5v-2c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.3.2 2.3.2v2.6h-1.3c-1.3 0-1.7.8-1.7 1.6V12h3l-.5 2.9h-2.5v7A10 10 0 0 0 22 12z"/></svg></a>
+            <a class="social" aria-label="Instagram" href="#"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 .001 10.001A5 5 0 0 0 12 7zm6.5-.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2zM12 9.5A2.5 2.5 0 1 1 9.5 12 2.5 2.5 0 0 1 12 9.5z"/></svg></a>
+            <a class="social" aria-label="WhatsApp" href="#"><svg viewBox="0 0 24 24"><path d="M20 3.8A10.2 10.2 0 0 0 3.8 20L3 23l3-.8A10.2 10.2 0 1 0 20 3.8zM6.2 18l.5-.2a8.5 8.5 0 1 1 3.2 1l-.3-.2-1.9.5.5-1.1zm11.3-4.4c-.2-.1-1.3-.6-1.5-.7s-.3-.1-.5.1-.6.7-.7.8-.3.2-.5.1a7 7 0 0 1-2-1.2 7.5 7.5 0 0 1-1.4-1.8c-.1-.2 0-.4.1-.5l.4-.6c.2-.2.2-.3.3-.5s0-.3 0-.4l-.7-1.6c-.2-.3-.4-.3-.6-.3h-.6c-.2 0-.5.1-.7.3s-1 1-1 2.3 1 2.6 1.1 2.8 2 3 4.8 4.2c.7.3 1.2.4 1.6.5.7.2 1.3.2 1.8.1.6-.1 1.3-.6 1.4-1.1s.2-1 .2-1.1-.1-.2-.3-.3z"/></svg></a>
+          </div>
+        </div>
+
+        <div class="glass p-6 md:p-8">
+          <h3 class="text-2xl font-bold mb-6">Envie uma Mensagem</h3>
+          <form class="space-y-4" onsubmit="enviarMensagem(event)">
+            <input class="input" type="text" placeholder="Seu nome" required/>
+            <input class="input" type="email" placeholder="Seu email" required/>
+            <input class="input" type="tel" placeholder="Seu telefone"/>
+            <textarea class="input resize-none" rows="4" placeholder="Sua mensagem" required></textarea>
+            <button class="btn-solid shine w-full" type="submit">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-top text-white py-10">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-8 h-8 bg-indigo-600 rounded-lg grid place-items-center"><span class="text-white font-bold">🦷</span></div>
+            <span class="text-xl font-bold">DentalCare</span>
+          </div>
+          <p class="text-slate-300">Excelência em odontologia há mais de 15 anos.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-3">Links</h4>
+          <ul class="space-y-2 text-slate-300">
+            <li><a class="link-footer" href="#inicio">Início</a></li>
+            <li><a class="link-footer" href="#servicos">Serviços</a></li>
+            <li><a class="link-footer" href="#sobre">Sobre</a></li>
+            <li><a class="link-footer" href="#contato">Contato</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-3">Atendimento</h4>
+          <p class="text-slate-300">Seg–Sex: 8h às 18h<br/>Sáb: 8h às 12h</p>
+        </div>
+      </div>
+      <div class="border-t border-white/10 mt-8 pt-6 text-center text-slate-300">
+        <p>&copy; 2025 DentalCare. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div id="modalAgendamento" class="fixed inset-0 bg-black/50 hidden z-50 grid place-items-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 relative">
+      <button class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-2xl" onclick="fecharAgendamento()">×</button>
+      <h3 class="text-2xl font-bold mb-5">Agendar Consulta</h3>
+      <form class="space-y-4" onsubmit="confirmarAgendamento(event)">
+        <input class="input" type="text" placeholder="Nome completo" required/>
+        <input class="input" type="tel" placeholder="Telefone" required/>
+        <select class="input" required>
+          <option value="">Serviço desejado</option>
+          <option value="clinica">Clínica Geral</option>
+          <option value="estetica">Estética</option>
+          <option value="ortodontia">Ortodontia</option>
+          <option value="implantes">Implantes</option>
+          <option value="pediatria">Odontopediatria</option>
+          <option value="emergencia">Emergência</option>
+        </select>
+        <div class="grid grid-cols-2 gap-3">
+          <input class="input" type="date" required/>
+          <input class="input" type="time" required/>
+        </div>
+        <button class="btn-solid shine w-full" type="submit">Confirmar</button>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

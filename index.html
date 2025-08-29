@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>DentalCare - Clínica Odontológica</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="admin.css">
+  <!-- CSS do site público -->
+  <link rel="stylesheet" href="./site.css?v=1">
 </head>
 <body class="bg-slate-50 text-slate-900">
 
@@ -25,7 +26,10 @@
           <a class="nav-link" href="#sobre">Sobre</a>
           <a class="nav-link" href="#contato">Contato</a>
         </div>
-        <button class="btn-solid shine" onclick="abrirAgendamento()">Agendar</button>
+        <div class="flex items-center gap-3">
+          <a class="btn-ghost hidden md:inline-flex" href="./admin.html">Painel Admin</a>
+          <button class="btn-solid shine" onclick="abrirAgendamento()">Agendar</button>
+        </div>
       </div>
     </nav>
   </header>
@@ -286,9 +290,7 @@
     </div>
   </div>
 
-  <script src="admin.js"></script>
+  <!-- JS do site (você já tinha esse nome) -->
+  <script defer src="./admin.js?v=1"></script>
 </body>
 </html>
-
-
-

@@ -10,6 +10,7 @@
   border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
+/* https://cssgradient.io/ */
 .gradient-bg{
   background: radial-gradient(1200px 600px at 10% -10%, #6366f1 10%, transparent 60%),
               radial-gradient(900px 500px at 110% 10%, #a78bfa 10%, transparent 60%),
